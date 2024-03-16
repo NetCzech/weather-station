@@ -6,8 +6,8 @@
 #define FONT(x) x##_tf
 
 //Temperature - Humidity - Forecast
-const String TXT_FORECAST_VALUES  = "3 denni predpoved";
-const String TXT_CONDITIONS       = "Podminky";
+const String TXT_FORECAST_VALUES  = "3 denní předpověď";
+const String TXT_CONDITIONS       = "Podmínky";
 const String TXT_DAYS             = "[dny]";
 const String TXT_TEMPERATURES     = "Teplota";
 const String TXT_TEMPERATURE_C    = "Teplota [°C]";
@@ -18,40 +18,40 @@ const String TXT_HUMIDITY_PERCENT = "Vlhkost [%]";
 const String TXT_PRESSURE         = "Tlak";
 const String TXT_PRESSURE_HPA     = "Tlak [hPa]";
 const String TXT_PRESSURE_IN      = "Tlak [in]";
-const String TXT_PRESSURE_STEADY  = "Ustalene";
-const String TXT_PRESSURE_RISING  = "Stoupajici";
-const String TXT_PRESSURE_FALLING = "Klesajici";
+const String TXT_PRESSURE_STEADY  = "Ustálené";
+const String TXT_PRESSURE_RISING  = "Stoupající";
+const String TXT_PRESSURE_FALLING = "Klesající";
 
 //RainFall / SnowFall
-const String TXT_RAINFALL_MM = "Srazky [mm]";
-const String TXT_RAINFALL_IN = "Srazky [in]";
-const String TXT_SNOWFALL_MM = "Snezeni [mm]";
-const String TXT_SNOWFALL_IN = "Snezeni [in]";
+const String TXT_RAINFALL_MM = "Srážky [mm]";
+const String TXT_RAINFALL_IN = "Srážky [in]";
+const String TXT_SNOWFALL_MM = "Sněžení [mm]";
+const String TXT_SNOWFALL_IN = "Sněžení [in]";
 const String TXT_PRECIPITATION_SOON = "Prec.";
 
 
 //Sun
-const String TXT_SUNRISE  = "Vychod slunce ";
-const String TXT_SUNSET   = "Zapad slunce ";
+const String TXT_SUNRISE  = "Východ slunce ";
+const String TXT_SUNSET   = "Západ slunce ";
 
 //Moon
 const String TXT_MOON_NEW             = "Nov";
-const String TXT_MOON_WAXING_CRESCENT = "Dorustajici srpek";
-const String TXT_MOON_FIRST_QUARTER   = "Prvni ctvrtina";
-const String TXT_MOON_WAXING_GIBBOUS  = "Dorustajici mesic";
-const String TXT_MOON_FULL            = "Uplnek";
-const String TXT_MOON_WANING_GIBBOUS  = "Couvajici mesic";
-const String TXT_MOON_THIRD_QUARTER   = "Posledni ctvrtina";
-const String TXT_MOON_WANING_CRESCENT = "Couvajici srpek";
+const String TXT_MOON_WAXING_CRESCENT = "Dorůstající srpek";
+const String TXT_MOON_FIRST_QUARTER   = "První čtvrtina";
+const String TXT_MOON_WAXING_GIBBOUS  = "Dorůstající měsíc";
+const String TXT_MOON_FULL            = "Úplněk";
+const String TXT_MOON_WANING_GIBBOUS  = "Couvající měsíc";
+const String TXT_MOON_THIRD_QUARTER   = "Poslední čtvrtina";
+const String TXT_MOON_WANING_CRESCENT = "Couvající srpek";
 
 //Power / WiFi
-const String TXT_POWER  = "Napajeni";
+const String TXT_POWER  = "Napájení";
 const String TXT_WIFI   = "Wi-Fi";
 const char* TXT_UPDATED = "Aktualizace:";
 
 
 //Wind
-const String TXT_WIND_SPEED_DIRECTION = "Rychlost/smer vetru";
+const String TXT_WIND_SPEED_DIRECTION = "Rychlost/směr větru";
 const String TXT_N   = "S";
 const String TXT_NNE = "SSV";
 const String TXT_NE  = "SV";
@@ -70,9 +70,9 @@ const String TXT_NW  = "SZ";
 const String TXT_NNW = "SSZ";
 
 //Day of the week
-const char* weekday_D[] = {"nedele", "pondeli", "utery", "streda", "ctvrtek", "patek", "sobota"};
+const char* weekday_D[] = {"neděle", "pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota"};
 
 //Month
-const char* month_M[] = {"leden", "unor", "brezen", "duben", "kveten", "cerven", "cervenec", "srpen", "zari", "rijen", "listopad", "prosinec"};
+const char* month_M[] = {"leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec"};
 
 #endif // LANG_H

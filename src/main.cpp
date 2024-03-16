@@ -279,7 +279,7 @@ void DrawGraph(int x_pos, int y_pos, int gwidth, int gheight, float Y1Min, float
 #define auto_scale_margin 0
 // 5 Y-axis division markers
 #define y_minor_axis 5
-  setFont(OpenSans10B);
+  setFont(opensans10bold);
   int maxYscale = -10000;
   int minYscale =  10000;
   int last_x, last_y;
@@ -317,7 +317,7 @@ void DrawGraph(int x_pos, int y_pos, int gwidth, int gheight, float Y1Min, float
   }
   //Draw the Y-axis scale
   #define number_of_dashes 20
-  setFont(OpenSans);
+  setFont(opensans8);
   for (int spacing = 0; spacing <= y_minor_axis; spacing++) {
     // Draw dashed graph grid lines
     for (int j = 0; j < number_of_dashes; j++) {
@@ -336,7 +336,7 @@ void DrawGraph(int x_pos, int y_pos, int gwidth, int gheight, float Y1Min, float
       }
     }
   }
-  setFont(OpenSans8B);
+  setFont(opensans8bold);
   for (int i = 0; i < 3; i++) {
     drawString(20 + x_pos + gwidth / 3 * i, y_pos + gheight + 10, String(i) + "d", LEFT);
     if (i < 2) drawFastVLine(x_pos + gwidth / 3 * i + gwidth / 3, y_pos, gheight, LightGrey);
@@ -628,12 +628,12 @@ void addcloud(int x, int y, int scale, int linesize) {
 // DRAW RAIN SYMBOL
 void addrain(int x, int y, int scale, bool IconSize) {
   if (IconSize == SmallIcon) {
-    setFont(OpenSans8B);
+    setFont(opensans8bold);
     drawString(x - 25, y + 12, "///////", LEFT);
   }
   else
   {
-    setFont(OpenSans18B);
+    setFont(opensans18bold);
     drawString(x - 60, y + 25, "///////", LEFT);
   }
 }
@@ -676,12 +676,12 @@ void addfog(int x, int y, int scale, int linesize, bool IconSize) {
 // DRAW SNOW SYMBOL
 void addsnow(int x, int y, int scale, bool IconSize) {
   if (IconSize == SmallIcon) {
-    setFont(OpenSans8B);
+    setFont(opensans8bold);
     drawString(x - 25, y + 15, "* * * *", LEFT);
   }
   else
   {
-    setFont(OpenSans18B);
+    setFont(opensans18bold);
     drawString(x - 60, y + 30, "* * * *", LEFT);
   }
 }
@@ -839,7 +839,7 @@ void Snow(int x, int y, bool IconSize, String IconName) {
 
 // DRAW NO DATA SYMBOL
 void Nodata(int x, int y, bool IconSize, String IconName) {
-  if (IconSize == LargeIcon) setFont(OpenSans24B); else setFont(OpenSans12B);
+  if (IconSize == LargeIcon) setFont(opensans24bold); else setFont(opensans12bold);
   drawString(x - 3, y - 10, "?", CENTER);
 }
 
@@ -879,16 +879,17 @@ void StopWiFi() {
 
 // DISPLAY STATUS INFORMATION (RSSI and battery symbol)
 void DisplayStatusSection(int x, int y, int rssi) {
-  setFont(OpenSans8B);
+  setFont(opensans8bold);
   DrawRSSI(x + 305, y + 15, rssi);
   DrawBattery(x + 150, y);
 }
 
 // DISPLAY MAIN INFORMATION (city, date and time)
 void DisplayGeneralInfoSection() {
-  setFont(OpenSans14B);
+  setFont(opensans14bold);
   drawString(400, 5, City, LEFT);
-  setFont(OpenSans8B);
+  //setFont(opensans8bold);
+  setFont(opensans8bold);
   drawString(390, 40, Date_str + " (" + Time_str + " hod.)", LEFT);
 }
 
@@ -899,7 +900,7 @@ void DisplayDisplayWindSection(int x, int y, float angle, float windspeed, int C
   int shiftWindSectionY = - 10;
   // Show wind direction on outer circle of width and length
   arrow(x + shiftWindSectionX, y + shiftWindSectionY, Cradius - 22, angle, 18, 33);
-  setFont(OpenSans8B);
+  setFont(opensans8bold);
   int dxo, dyo, dxi, dyi;
   // Draw compass circle
   drawCircle(x + shiftWindSectionX, y + shiftWindSectionY, Cradius, Black);
@@ -927,7 +928,7 @@ void DisplayDisplayWindSection(int x, int y, float angle, float windspeed, int C
   drawString(x + shiftWindSectionX, y + shiftWindSectionY + Cradius + 10, TXT_S, CENTER);
   drawString(x + shiftWindSectionX - Cradius - 15, y + shiftWindSectionY - 5, TXT_W, CENTER);
   drawString(x + shiftWindSectionX + Cradius + 15, y + shiftWindSectionY - 5, TXT_E, CENTER);
-  setFont(OpenSans10B);
+  setFont(opensans10bold);
   drawString(x + shiftWindSectionX, y + shiftWindSectionY - 50, WindDegToOrdinalDirection(angle), CENTER);
   drawString(x + shiftWindSectionX - 30, y + shiftWindSectionY - 9, String(windspeed, 1) + " m/s", LEFT);
   drawString(x + shiftWindSectionX + 3, y + shiftWindSectionY + 30, String(angle, 0) + " °", CENTER);
@@ -935,7 +936,7 @@ void DisplayDisplayWindSection(int x, int y, float angle, float windspeed, int C
 
 // DISPLAY ASTRONOMY ELEMENTS (sunrise time, sunset time and current moon phase)
 void DisplayAstronomySection(int x, int y) {
-  setFont(OpenSans10);
+  setFont(opensans10);
   // Display sunrise and sunset information
   DrawSunrise(x + 15, y + 30);
   drawString (x + 80, y + 40, ConvertUnixTime(WxConditions[0].Sunrise).substring(0, 5), LEFT);
@@ -947,24 +948,24 @@ void DisplayAstronomySection(int x, int y) {
   const int month_utc  = now_utc->tm_mon + 1;
   const int year_utc   = now_utc->tm_year + 1900;
   // Draw moon phase information
-  setFont(OpenSans8B);
+  setFont(opensans8bold);
   drawString(x + 160, y + 88, MoonPhase(day_utc, month_utc, year_utc, Hemisphere), LEFT);
   DrawMoon(x + 160, y - 40, day_utc, month_utc, year_utc, Hemisphere);
 }
 
 // DISPLAY TEMPERATURE AND HUMIDITY INFORMATION
 void DisplayTemperatureSection(int x, int y) {
-  setFont(OpenSans16B);
+  setFont(opensans16bold);
   drawString(x - 30, y + 8, "Teplota: " + String(WxConditions[0].Temperature, 1) + " °C", LEFT);
-  setFont(OpenSans10);
+  setFont(opensans10);
   drawString(x - 30, y + 60, "min / max:   " + String(WxConditions[0].High, 0) + " °C / " + String(WxConditions[0].Low, 0) + " °C", LEFT);
-  setFont(OpenSans16B);
+  setFont(opensans16bold);
   drawString(x - 30, y + 100, "Vlhkost: " + String(WxConditions[0].Humidity, 0) + " %", LEFT);
 }
 
 // DISPLAY PRESSURE INFORMATION (pressure trend, pressure, visibility and cloud cover)
 void DisplayPressureSection(int x, int y, float pressure, String slope) {
-  setFont(OpenSans10B);
+  setFont(opensans10bold);
   DrawPressureAndTrend(x + 255, y - 100, pressure, slope);
   if (WxConditions[0].Visibility > 0) {
     Visibility(x + 270, y - 70, String(WxConditions[0].Visibility) + " m");
@@ -993,7 +994,7 @@ void DisplayForecastWeather(int x, int y, int index) {
   int fwidth = 90;
   x = x + fwidth * index;
   DisplayConditionsSection(x + fwidth / 2, y + 90, WxForecast[index].Icon, SmallIcon);
-  setFont(OpenSans10B);
+  setFont(opensans10bold);
   drawString(x + fwidth / 2, y + 30, String(ConvertUnixTime(WxForecast[index].Dt + WxConditions[0].Timezone).substring(0, 5)), CENTER);
   drawString(x + fwidth / 2, y + 125, String(WxForecast[index].High, 0) + "°/" + String(WxForecast[index].Low, 0) + "°", CENTER);
 }
@@ -1032,7 +1033,7 @@ void DisplayForecastSection(int x, int y) {
 // DISPLAY A TEXT DESCRIPTION OF THE WEATHER
 void DisplayForecastTextSection(int x, int y) {
 #define lineWidth 34
-  setFont(OpenSans12B);
+  setFont(opensans12bold);
   // e.g. typically 'Clouds'
   //Wx_Description = WxConditions[0].Main0;
   // e.g. typically 'overcast clouds' => you choose which
@@ -1060,7 +1061,7 @@ void DisplayForecastTextSection(int x, int y) {
 
 // DISPLAY MAIN WEATHER INFORMATION
 void DisplayMainWeatherSection(int x, int y) {
-  setFont(OpenSans8B);
+  setFont(opensans8bold);
   DisplayTemperatureSection(x, y - 40);
   DisplayForecastTextSection(x - 55, y + 25);
   DisplayPressureSection(x - 25, y + 90, WxConditions[0].Pressure, WxConditions[0].Trend);
@@ -1127,8 +1128,11 @@ void setup() {
   }
   // Switch the display to sleep mode
   BeginSleep();
-}
+  }
 
 void loop() {
-  // Nothing to do here
+  // For debugging, comment BeginSleep(); and uncomment void loop() section;
+  // while (true) {
+  //  delay(1000);
+  //}
 }

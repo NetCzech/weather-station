@@ -25,14 +25,14 @@
 #include "img/sunset.h"
 
 // Fonts
-#include "fonts/OpenSans6.h"
-#include "fonts/OpenSans8B.h"
-#include "fonts/OpenSans10.h"
-#include "fonts/OpenSans10B.h"
-#include "fonts/OpenSans12B.h"
-#include "fonts/OpenSans14B.h"
-#include "fonts/OpenSans16B.h"
-#include "fonts/OpenSans18B.h"
-#include "fonts/OpenSans24B.h"
+#include "fonts/opensans8.h"
+#include "fonts/opensans10.h"
+#include "fonts/opensans8bold.h"
+#include "fonts/opensans10bold.h"
+#include "fonts/opensans12bold.h"
+#include "fonts/opensans14bold.h"
+#include "fonts/opensans16bold.h"
+#include "fonts/opensans18bold.h"
+#include "fonts/opensans24bold.h"
 
 #endif //WEATHER_STATION_INCLUDE_H
